@@ -1,21 +1,23 @@
 class Car {
-  String _name;
-  int _maxSpeed;
-  
+  int id;
+  String nickName;
+  int maxSpeed;
+  int stockNumber;
+
   Car();
-  Car.all(this._name, this._maxSpeed);
 
-  String get name => _name;
-  set name(String value) {
-    _name = value;
+  Car.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    nickName = json['nickName'];
+    maxSpeed = json['maxSpeed'];
+    stockNumber = json['stockNumber'];
   }
 
-  int get maxSpeed => _maxSpeed;
-  set maxSpeed(int value) {
-    _maxSpeed = value;
-  }
-  
-  getDetails() {
-    return "my car "+ name + " has top speed "+ maxSpeed.toString();
+  Map<String, dynamic> toJson() {
+    return {
+      'nickName': "$nickName",
+      'maxSpeed': maxSpeed,
+      'stockNumber': stockNumber,
+      'id': id};
   }
 }

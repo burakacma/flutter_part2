@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_part2/carList.dart';
 
 class Beginner extends StatefulWidget {
   @override
@@ -40,7 +41,7 @@ class BeginnerState extends State<Beginner> {
                   //height: MediaQuery.of(context).size.height * 3 / 10,
                   width: MediaQuery.of(context).size.width /4,
                   alignment: Alignment.topCenter,
-                  child: Image.asset("assets/download.jpeg"),
+                  child: Text("top Banner")//Image.asset("assets/download.jpeg"),
                 ),
               ),
               Center(
@@ -160,9 +161,9 @@ class BeginnerState extends State<Beginner> {
                               ),
                             ),
                             onPressed: () {
-//                              Navigator.of(context).push(
-//                                  MaterialPageRoute(builder: (context) => Liste())
-//                              );
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => CarList())
+                              );
                             }),
                       ),//login butonu
                     ],
@@ -171,9 +172,10 @@ class BeginnerState extends State<Beginner> {
               ),
               Align(
                 child: Container(
-                      child: Image.asset("assets/download.jpeg")
+                      child: Text("Bottom banner")//Image.asset("assets/download.jpeg")
                       ,
                       width: MediaQuery.of(context).size.width /4,
+                  height: 30,
                     ),
 
                 alignment: Alignment.bottomCenter,
